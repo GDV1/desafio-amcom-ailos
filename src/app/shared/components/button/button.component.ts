@@ -7,6 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class ButtonComponent {
   @Input() title = '';   
-  @Input() style = 'PRIMARY' || 'SECONDARY';
+  @Input() styles = '';
 
+  setStyle = false;
+
+  constructor() { }
+
+  ngOnInit(): void {
+    this.styles === "primary" ? !this.setStyle : this.setStyle;
+  }
 }

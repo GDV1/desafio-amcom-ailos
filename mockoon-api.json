@@ -1,0 +1,78 @@
+{
+  "uuid": "d3b25bb3-68c9-4e47-bc6f-7245d80850c0",
+  "lastMigration": 27,
+  "name": "Mockoon api",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 8081,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "43b5c703-4de6-4a05-8861-810063465722",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "user",
+      "responses": [
+        {
+          "uuid": "165f37de-21cd-49b9-b5f2-39e3b937e7ad",
+          "body": "{\n  \"name\": \"Mariane de Sousa Oliveira\"\n  \"status\": \"Regular\"\n  \"accounts\" : [ \n    {\n      \"type\": \"application\",\n      \"institution\": \"Cooperativa Viacredi\",\n      \"number\": \"557932-4\"\n    }, {\n      \"type\": \"checking\",\n      \"number\": \"778461-8\"\n    }\n  ]\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true
+        }
+      ],
+      "enabled": true,
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "43b5c703-4de6-4a05-8861-810063465722"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": []
+}

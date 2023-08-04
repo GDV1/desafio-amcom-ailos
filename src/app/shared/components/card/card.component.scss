@@ -1,0 +1,41 @@
+.card {
+    border: 1px solid #999;
+    width: 25%;
+    padding: 1em;
+    
+    h4 {
+        margin: auto;
+    }
+
+    p {
+        color: #777;
+        margin: auto;
+    }
+
+    a {
+        color: #165C7D;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .bi.bi-person-fill {
+        color: #777;
+    }
+
+    .bi.bi-check-circle {
+        color: #07FA3C;
+    }
+    
+    .info {
+        display: flex;
+        align-items: center;
+        gap: 2em;
+        margin: 1em 0em;
+    }
+
+    .value {
+        font-weight: bold;
+        color: #000
+    }
+
+}

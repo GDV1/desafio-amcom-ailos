@@ -1,1 +1,39 @@
-<p>card works!</p>
+<div class="card">
+    <section *ngIf="searchCpf; else account">
+        <header>
+            <h4>Situação cadastral do CPF</h4>
+            <p>Consulta na Receita Federal</p>
+        </header>
+        <div class="info">
+            <i class="bi bi-person-fill"></i>
+            <div class="details">
+                <p>Nome</p>
+                <p class="value">Mariane de Sousa Oliveira</p>
+            </div>
+        </div>
+        <div class="info">
+            <i class="bi bi-check-circle"></i>
+            <div class="details">
+                <p>Situação do CPF</p>
+                <p class="value">Regular</p>
+            </div>
+        </div>
+    </section>
+
+    <ng-template #account>
+        <header>
+            <h4>Conta aplicação</h4>
+            <p>Cooperativa Viacredi</p>
+        </header>
+        <div class="info">
+            <i class="bi bi-credit-card"></i>
+            <div class="details">
+                <p>Número da conta</p>
+                <p class="value">557932-4</p>
+            </div>
+        </div>
+        <div class="info">
+            <a href="">Duplicar conta</a>
+        </div>
+    </ng-template>
+</div>
