@@ -14,6 +14,6 @@ export class ButtonComponent {
   constructor() { }
 
   ngOnInit(): void {
-    this.styles === "primary" ? !this.setStyle : this.setStyle;
+    this.styles === 'primary' ? (this.setStyle = !this.setStyle) : (this.setStyle = this.setStyle);
   }
 }

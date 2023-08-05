@@ -1,3 +1,50 @@
 .content {
     margin: 3em;
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    p {
+        color: #555;
+        line-height: 1.5em;
+        width: 50vw;
+        margin: 1em 0;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 25vw;
+
+        label {
+            margin: 0.5em 0;
+        }
+
+        .button {
+            display: flex;
+            align-items: end;
+        }
+
+        input {
+            padding: 0.5em 0 0.6em 1em;
+            font-size: 1em;
+            margin-right: 2em;
+        }
+    }
+
+    .form {
+        display: flex;
+        align-items: end;
+    }
+
+    .result {
+        display: flex;
+        margin: 2em 0;
+        gap: 2em;
+
+        app-card {
+            width: 25%;
+        }
+    }
 }
