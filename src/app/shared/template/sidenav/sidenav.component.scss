@@ -1,17 +1,29 @@
-.sidenav {
-    background-color: #3F51B5;
-    width: 100px;
-}
+.container {
+    display: flex;
 
-.sidenav a {
-    color: #FFF;
-}
+    .menu {
+        width: 10em;
+        height: 100vh;
+        background-color: #165C7D;
+    }
 
-.sidenav i {
-    padding-right: 10px;
-}
+    li {
+        list-style: none;
+        margin: 2.5em 3em;
 
-.content {
-    padding: 16px;
-    background-color: #FFF;
+        i {
+            justify-content: center;
+            display: flex;
+        }
+    }
+
+    .bi {
+        color: #FFF;
+        font-size: 2em;
+    }
+
+    .content {
+        background-color: #FFF;
+        width: 100em;
+    }
 }

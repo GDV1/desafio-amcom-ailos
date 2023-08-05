@@ -16,8 +16,11 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { FooterComponent } from './template/footer/footer.component';
+import { AppRoutingModule } from '../app-routing.module';
+import { StepperComponent } from './components/stepper/stepper.component';
 
-const components = [CardComponent, ButtonComponent, SidenavComponent]
+const components = [CardComponent, ButtonComponent, SidenavComponent, HeaderComponent, FooterComponent]
 
 const material = [
   MatToolbarModule,
@@ -35,11 +38,11 @@ const material = [
   declarations: [
     ...components,
     CpfPipe,
-    SidenavComponent,
-    HeaderComponent,
+    StepperComponent,
   ],
   imports: [
     ...material,
+    AppRoutingModule,
     CommonModule,
   ],
   exports: [ 

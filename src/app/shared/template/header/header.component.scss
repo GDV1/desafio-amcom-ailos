@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;  
+    padding: 2.5em;
+    background-color: #FFF;
+    
+    h1 {
+        font-weight: bold;
+        font-family: 'Exo 2', sans-serif;
+    }
+
+    p {
+        margin: auto;
+        font-size: initial;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        color: #000
+    }
+
+    .logo {
+        max-height: 32px;
+    }
+
+}
