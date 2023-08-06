@@ -1,3 +1,6 @@
-<button [ngClass]="{'primary': setStyle, 'secondary': !setStyle}">
+<button
+ [ngClass]="{'primary': setStyle, 'secondary': !setStyle}"
+ [type]="typeButton"
+ >
     {{ title }}
 </button>

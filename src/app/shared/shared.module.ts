@@ -19,6 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { FooterComponent } from './template/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { StepperComponent } from './components/stepper/stepper.component';
+import { UserService } from './services/user.service';
 
 const components = [CardComponent, ButtonComponent, SidenavComponent, HeaderComponent, FooterComponent]
 
@@ -48,6 +49,9 @@ const material = [
   exports: [ 
     ...components,
     CpfPipe,
+  ],
+  providers: [
+    UserService
   ]
 })
 export class SharedModule { }

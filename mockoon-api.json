@@ -4,7 +4,7 @@
   "name": "Mockoon api",
   "endpointPrefix": "",
   "latency": 0,
-  "port": 8081,
+  "port": 3000,
   "hostname": "",
   "folders": [],
   "routes": [
@@ -12,7 +12,7 @@
       "uuid": "43b5c703-4de6-4a05-8861-810063465722",
       "type": "http",
       "documentation": "",
-      "method": "get",
+      "method": "post",
       "endpoint": "user",
       "responses": [
         {
@@ -31,6 +31,23 @@
           "disableTemplating": false,
           "fallbackTo404": false,
           "default": true
+        },
+        {
+          "uuid": "ecbcc900-0b7c-49c0-9619-3b0a978311dd",
+          "body": "{}",
+          "latency": 0,
+          "statusCode": 400,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false
         }
       ],
       "enabled": true,

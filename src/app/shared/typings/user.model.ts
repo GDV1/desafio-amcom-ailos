@@ -1,4 +1,4 @@
-interface User {
+export interface User {
     cpf: string;
     name: string;
     situation: string;

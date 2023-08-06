@@ -9,7 +9,13 @@
             <label for="cpf">CPF</label>
             <input type="text" name="" id="" placeholder="000.000.000-00">
         </form>
-        <app-button class="button" title="Consultar por CPF" styles="primary"></app-button>
+        <app-button 
+            onclick="consultUserByCpf()" 
+            typeButton="submit" 
+            class="button" 
+            title="Consultar por CPF" 
+            styles="primary"
+        ></app-button>
     </section>
     
     <section class="result">
