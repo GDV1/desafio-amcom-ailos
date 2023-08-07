@@ -20,6 +20,7 @@ import { FooterComponent } from './template/footer/footer.component';
 import { AppRoutingModule } from '../app-routing.module';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { UserService } from './services/user.service';
+import { HttpClientModule } from '@angular/common/http';
 
 const components = [CardComponent, ButtonComponent, SidenavComponent, HeaderComponent, FooterComponent]
 
@@ -44,6 +45,7 @@ const material = [
   imports: [
     ...material,
     AppRoutingModule,
+    HttpClientModule, 
     CommonModule,
   ],
   exports: [ 

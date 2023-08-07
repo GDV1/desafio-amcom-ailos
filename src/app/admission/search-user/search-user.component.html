@@ -7,10 +7,10 @@
     <section class="form">
         <form>
             <label for="cpf">CPF</label>
-            <input type="text" name="" id="" placeholder="000.000.000-00">
+            <input formControlName="cpf" type="text" name="cpf" required id="" placeholder="000.000.000-00">
         </form>
         <app-button 
-            onclick="consultUserByCpf()" 
+            (click)="consultUserByCpf()" 
             typeButton="submit" 
             class="button" 
             title="Consultar por CPF" 

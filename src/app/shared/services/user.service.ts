@@ -15,21 +15,19 @@ export class UserService {
     protected readonly http: HttpClient,
   ) { }
 
-  private _user = new BehaviorSubject<User>({
-    name: '',
-    cpf: '',
-    situation: ''
-  });
+  private _user = new BehaviorSubject<any>(null);
+  
+  public get user$(): Observable<any> {
+    return this._user.asObservable();
+  }
 
-  public currentUser = this._user.asObservable();
-
-  public setCurrentUser(user: User) {
+  public setCurrentUser(user: any) {
     this._user.next(user);
   }
 
-  consultUser(cpf: string): Observable<User> {
-    return this.http.post<User>(`${environment.baseURL}/user`, cpf).pipe(
-      map((data: User) => this.setCurrentUser(data)),
+  consultUser(cpf: string): Observable<any> {
+    return this.http.post<any>(`${environment.baseURL}/user`, cpf).pipe(
+      map((data: any) => this.setCurrentUser(data)),
       catchError((err) => this.errorHandler(err))
     );
   }
@@ -37,13 +35,4 @@ export class UserService {
   errorHandler(e: any): Observable<any> {
     return e;
   }
-
-  // showMessage(msg: string, isError: boolean = false): void {
-  //   this.snackBar.open(msg, '', {
-  //     duration: 4000,
-  //     horizontalPosition: "center",
-  //     verticalPosition: "top",
-  //     panelClass: isError ? ['msg-error'] : ['msg-success']
-  //   })
-  // }
 }
