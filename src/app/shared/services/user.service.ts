@@ -1,8 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable } from 'rxjs';
+import { Observable, catchError, retry, map } from 'rxjs';
 import { environment } from 'src/environment/environment';
-import { catchError, map } from 'rxjs/operators';
 import { User } from '../typings/user.model';
 
 
@@ -15,24 +14,22 @@ export class UserService {
     protected readonly http: HttpClient,
   ) { }
 
-  private _user = new BehaviorSubject<any>(null);
-  
-  public get user$(): Observable<any> {
-    return this._user.asObservable();
+  consultUser(cpf: string) {
+    return this.http.get(`${environment.baseURL}/user` + '/' + cpf)
+    .pipe(
+      catchError(this.errorHandler)
+    )
   }
 
-  public setCurrentUser(user: any) {
-    this._user.next(user);
-  }
+  // getCarById(id: number): Observable<Car> {
+  //   return this.httpClient.get<Car>(this.url + '/' + id)
+  //     .pipe(
+  //       retry(2),
+  //       catchError(this.handleError)
+  //     )
+  // }
 
-  consultUser(cpf: any): Observable<any> {
-    return this.http.post<any>(`${environment.baseURL}/user`, cpf).pipe(
-      map((data: any) => this.setCurrentUser(data)),
-      catchError((err) => this.errorHandler(err))
-    );
-  }
-
-  errorHandler(e: any): Observable<any> {
-    return e;
+  errorHandler(error: HttpErrorResponse) {
+    return error.message;
   }
 }

@@ -1,5 +1,8 @@
-export interface User {
+import { Account } from "./account.model";
+
+export interface User extends Account{
     cpf: string;
     name: string;
-    situation: string;
+    status: string;
+    account: Account;
 }

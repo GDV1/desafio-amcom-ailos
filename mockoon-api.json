@@ -17,7 +17,7 @@
       "responses": [
         {
           "uuid": "165f37de-21cd-49b9-b5f2-39e3b937e7ad",
-          "body": "{\n  \"name\": \"Mariane de Sousa Oliveira\"\n  \"status\": \"Regular\"\n  \"accounts\" : [ \n    {\n      \"type\": \"application\",\n      \"institution\": \"Cooperativa Viacredi\",\n      \"number\": \"557932-4\"\n    }, {\n      \"type\": \"checking\",\n      \"number\": \"778461-8\"\n    }\n  ]\n}",
+          "body": "{\n  \"name\": \"Mariane de Sousa Oliveira\"\n  \"status\": \"Regular\",\n  \"cpf\": \"\"\n  \"accounts\" : [ \n    {\n      \"type\": \"application\",\n      \"institution\": \"Cooperativa Viacredi\",\n      \"number\": \"557932-4\"\n    }, {\n      \"type\": \"checking\",\n      \"number\": \"778461-8\"\n    }\n  ]\n}",
           "latency": 0,
           "statusCode": 200,
           "label": "",
@@ -77,7 +77,7 @@
     "caPath": "",
     "passphrase": ""
   },
-  "cors": true,
+  "cors": false,
   "headers": [
     {
       "key": "Content-Type",

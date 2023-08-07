@@ -9,20 +9,33 @@
             <label for="cpf">CPF</label>
             <input formControlName="cpf" type="tel" name="cpf" required id="" placeholder="000.000.000-00">
         </form>
-        <app-button 
-            (click)="onSubmit()"
-            typeButton="submit"
-            class="button" 
-            title="Consultar por CPF" 
-            styles="primary"
-        ></app-button>
+        <app-button (click)="onSubmit()" typeButton="submit" class="button" title="Consultar por CPF"
+            styles="primary"></app-button>
     </section>
-    
-    <section class="result">
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-        <app-card></app-card>
-    </section>
-</section>
+    <p>{{ user | json }}</p>
 
+    <!-- <section class="result">
+        <div class="card">
+            <section *ngIf="user">
+                <header>
+                    <h4>Situação cadastral do CPF</h4>
+                    <p>Consulta na Receita Federal</p>
+                </header>
+                <div class="info">
+                    <i class="bi bi-person-fill"></i>
+                    <div class="details">
+                        <p>Nome</p>
+                        <p class="value">{{ user.name }}</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <i class="bi bi-check-circle"></i>
+                    <div class="details">
+                        <p>Situação do CPF</p>
+                        <p class="value">{{ user.status }}</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </section> -->
+</section>
