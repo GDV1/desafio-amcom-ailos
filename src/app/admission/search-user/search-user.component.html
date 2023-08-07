@@ -5,13 +5,13 @@
     </p>
 
     <section class="form">
-        <form>
+        <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <label for="cpf">CPF</label>
-            <input formControlName="cpf" type="text" name="cpf" required id="" placeholder="000.000.000-00">
+            <input formControlName="cpf" type="tel" name="cpf" required id="" placeholder="000.000.000-00">
         </form>
         <app-button 
-            (click)="consultUserByCpf()" 
-            typeButton="submit" 
+            (click)="onSubmit()"
+            typeButton="submit"
             class="button" 
             title="Consultar por CPF" 
             styles="primary"

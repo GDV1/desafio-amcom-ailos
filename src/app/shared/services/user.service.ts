@@ -25,7 +25,7 @@ export class UserService {
     this._user.next(user);
   }
 
-  consultUser(cpf: string): Observable<any> {
+  consultUser(cpf: any): Observable<any> {
     return this.http.post<any>(`${environment.baseURL}/user`, cpf).pipe(
       map((data: any) => this.setCurrentUser(data)),
       catchError((err) => this.errorHandler(err))

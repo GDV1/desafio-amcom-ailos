@@ -1,39 +1,29 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormBuilder, FormControl, Validators } from '@angular/forms';
+import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
 
-import { Observable, Subscription } from 'rxjs';
-import { User } from 'src/app/shared/typings/user.model';
 
 @Component({
   selector: 'app-search-user',
   templateUrl: './search-user.component.html',
   styleUrls: ['./search-user.component.scss']
 })
-export class SearchUserComponent implements OnInit, OnDestroy {
-  subs: Subscription = new Subscription();
-  user: any;
-
+export class SearchUserComponent implements OnInit {
+  
   constructor(
     private userService: UserService,
-    private form: FormBuilder
   ) { }
 
-  consultForm = this.form.group({
-    cpf: ['', Validators.required, Validators.maxLength(11)],
-  });
-
-
-  consultUserByCpf() {
-    
-    // this.subs.add(this.userService.consultUser('').subscribe(
-    //   (data) => console.log(data)
-    // ));
-  }
+  userForm = new FormGroup({
+    cpf: new FormControl('', [Validators.required])
+  })
 
   ngOnInit(): void { }
 
-  ngOnDestroy() {
-    this.subs.unsubscribe();
+  onSubmit() {
+    this.userService.consultUser(this.userForm.value).subscribe(() => {
+      (data: any) => console.log(data)
+    })
+    // console.log(this.userForm.value.cpf);
   }
 }

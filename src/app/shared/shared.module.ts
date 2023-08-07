@@ -21,20 +21,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { StepperComponent } from './components/stepper/stepper.component';
 import { UserService } from './services/user.service';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const components = [CardComponent, ButtonComponent, SidenavComponent, HeaderComponent, FooterComponent]
-
-const material = [
-  MatToolbarModule,
-  MatSidenavModule,
-  MatListModule,
-  MatCardModule,
-  MatButtonModule,
-  MatSnackBarModule,
-  MatFormFieldModule,
-  MatInputModule,
-  MatIconModule
-]
 
 @NgModule({
   declarations: [
@@ -43,10 +32,11 @@ const material = [
     StepperComponent,
   ],
   imports: [
-    ...material,
     AppRoutingModule,
     HttpClientModule, 
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [ 
     ...components,
