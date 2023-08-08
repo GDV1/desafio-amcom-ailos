@@ -1,39 +1,39 @@
 <div class="card">
-    <section *ngIf="searchCpf; else account">
+    <section *ngIf="type == 'CONSULT'; else account">
         <header>
-            <h4>Situação cadastral do CPF</h4>
-            <p>Consulta na Receita Federal</p>
+            <h4>{{ title }}</h4>
+            <p>{{ description }}</p>
         </header>
         <div class="info">
-            <i class="bi bi-person-fill"></i>
+            <i class="bi {{ icon }}"></i>
             <div class="details">
                 <p>Nome</p>
-                <p class="value">Mariane de Sousa Oliveira</p>
+                <p class="value">{{ name }}</p>
             </div>
         </div>
         <div class="info">
             <i class="bi bi-check-circle"></i>
             <div class="details">
                 <p>Situação do CPF</p>
-                <p class="value">Regular</p>
+                <p class="value">{{ status }}</p>
             </div>
         </div>
     </section>
 
     <ng-template #account>
         <header>
-            <h4>Conta aplicação</h4>
-            <p>Cooperativa Viacredi</p>
+            <h4>{{ title == 'application' ? 'aplicação' : 'corrente' }}</h4>
+            <p>{{ description }}</p>
         </header>
         <div class="info">
-            <i class="bi bi-credit-card"></i>
+            <i class="bi {{ icon }}"></i>
             <div class="details">
                 <p>Número da conta</p>
-                <p class="value">557932-4</p>
+                <p class="value">{{ numberAccount }}</p>
             </div>
-        </div>
-        <div class="info">
-            <a href="">Duplicar conta</a>
+            <div class="info">
+                <a href="">Duplicar conta</a>
+            </div>
         </div>
     </ng-template>
 </div>

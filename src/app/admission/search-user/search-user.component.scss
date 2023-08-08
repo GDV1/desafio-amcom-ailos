@@ -40,10 +40,16 @@
     .form {
         display: flex;
         align-items: flex-end;
+
+        .error-feedback {
+            color: #FF0000;
+            border-color: #FF0000;
+        }
     }
 
     .result {
         display: flex;
+        
         margin: 2em 0;
         gap: 2em;
 
@@ -52,5 +58,54 @@
         }
     }
 
+    .card {
+        border: 1px solid #999;
+        padding: 1em;
+        
+        h4 {
+            margin: auto;
+        }
+    
+        p {
+            color: #777;
+            margin: auto;
+        }
+    
+        a {
+            color: #165C7D;
+            text-decoration: none;
+            font-weight: bold;
+        }
+    
+        .bi.bi-person-fill {
+            color: #777;
+        }
+    
+        .bi.bi-check-circle {
+            color: #07FA3C;
+        }
+        
+        .info {
+            display: flex;
+            align-items: center;
+            gap: 2em;
+            margin: 1em 0em;
+        }
+    
+        .value {
+            font-weight: bold;
+            color: #000
+        }
+    }
+}
 
+button {
+    height: 3em;
+    width: 12em;
+    
+    &.primary {
+        background-color: #165C7D;
+        border: 1px solid #165C7D;
+        color: #FFF;
+    }
 }

@@ -2,17 +2,18 @@
   "user": {
     "name": "Mariane de Sousa Oliveira",
     "status": "Regular",
-    "cpf": "",
-    "accounts": [
-      {
-        "type": "application",
-        "institution": "Cooperativa Viacredi",
-        "number": "557932-4"
-      },
-      {
-        "type": "checking",
-        "number": "778461-8"
-      }
-    ]
-  }
+    "cpf": "02621270166"
+  },
+  "accounts": [
+    {
+      "type": "application",
+      "institution": "Cooperativa Viacredi",
+      "number": "557932-4"
+    },
+    {
+      "type": "checking",
+      "institution": "Cooperativa Viacredi",
+      "number": "778461-8"
+    }
+  ]
 }

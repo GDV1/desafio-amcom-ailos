@@ -7,35 +7,37 @@
     <section class="form">
         <form [formGroup]="userForm" (ngSubmit)="onSubmit()">
             <label for="cpf">CPF</label>
-            <input formControlName="cpf" type="tel" name="cpf" required id="" placeholder="000.000.000-00">
+            <input formControlName="cpf" type="tel" required id="" placeholder="Informe um CPF para consulta">
+            <div *ngIf="userForm.get('cpf')?.errors?.['required'] && userForm.get('cpf')?.touched">
+                O CPF é obrigatório
+            </div>
         </form>
-        <app-button (click)="onSubmit()" typeButton="submit" class="button" title="Consultar por CPF"
-            styles="primary"></app-button>
+        <button (click)="onSubmit()" type="submit" class="primary">
+            Consultar por CPF
+        </button>
     </section>
-    <p>{{ user | json }}</p>
+
+    <section class="result">
+        <app-card 
+            *ngIf="user" 
+            type="CONSULT" 
+            title="Situação cadastral do CPF"
+            description="Consulta na Receita Federal" 
+            icon="bi-person-fill" [name]="user.name"
+            [status]="user.status"
+            ></app-card>
+    </section>
 
     <!-- <section class="result">
-        <div class="card">
-            <section *ngIf="user">
-                <header>
-                    <h4>Situação cadastral do CPF</h4>
-                    <p>Consulta na Receita Federal</p>
-                </header>
-                <div class="info">
-                    <i class="bi bi-person-fill"></i>
-                    <div class="details">
-                        <p>Nome</p>
-                        <p class="value">{{ user.name }}</p>
-                    </div>
-                </div>
-                <div class="info">
-                    <i class="bi bi-check-circle"></i>
-                    <div class="details">
-                        <p>Situação do CPF</p>
-                        <p class="value">{{ user.status }}</p>
-                    </div>
-                </div>
-            </section>
+        <div *ngFor="let account of accounts">
+            <app-card 
+            type="ACCOUNT" 
+            title="{{ 'Conta + account.type' }}"
+            description="account.institution" 
+            icon="bi-credit-card" 
+            [numberAccount]="account.number"
+            ></app-card>
         </div>
     </section> -->
+
 </section>

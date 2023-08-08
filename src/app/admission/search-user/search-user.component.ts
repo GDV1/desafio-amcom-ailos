@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { UserService } from 'src/app/shared/services/user.service';
-import { User } from 'src/app/shared/typings/user.model';
-import { map } from 'rxjs/operators';
-
 
 @Component({
   selector: 'app-search-user',
@@ -13,21 +10,33 @@ import { map } from 'rxjs/operators';
 export class SearchUserComponent implements OnInit {
 
   user!: any;
-  typeAccount!: string;
+  userForm!: FormGroup;
+  accounts !: any;
   
   constructor(
     private userService: UserService,
   ) { }
 
-  userForm = new FormGroup({
-    cpf: new FormControl('', [Validators.required])
-  })
-
-  ngOnInit(): void { }
-
-  onSubmit() {
-    this.userService.consultUser('').subscribe((data) => {
-      this.user = data;
+  ngOnInit(): void {
+    this.userForm = new FormGroup({
+      cpf: new FormControl (null, [Validators.required])
     })
   }
+
+  get cpf() {
+    return this.userForm.value.cpf;
+  }
+
+  onSubmit() {
+    this.userService.consultUser(this.cpf).subscribe((result) => {
+      this.user = result;
+    })
+  }
+
+  // consultAccounts() {
+  //   this.userService.consultAccountByUser(this.cpf).subscribe((data) => {
+  //     this.accounts = data;
+  //   })
+  // }
+
 }

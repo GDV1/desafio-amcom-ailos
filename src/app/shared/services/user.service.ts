@@ -1,9 +1,8 @@
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable, catchError, retry, map } from 'rxjs';
+import { Observable, catchError, throwError } from 'rxjs';
 import { environment } from 'src/environment/environment';
 import { User } from '../typings/user.model';
-
 
 @Injectable({
   providedIn: 'root'
@@ -11,25 +10,32 @@ import { User } from '../typings/user.model';
 export class UserService {
 
   constructor(
-    protected readonly http: HttpClient,
+    protected http: HttpClient,
   ) { }
 
-  consultUser(cpf: string) {
-    return this.http.get(`${environment.baseURL}/user` + '/' + cpf)
-    .pipe(
-      catchError(this.errorHandler)
-    )
+  consultUser(cpf: string): Observable <User> {
+    let params = new HttpParams();
+    params = params.append('cpf', cpf);
+
+    let response = this.http.get<User>(`${environment.baseURL}/user`, { params })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(() => error);
+        })
+      );
+    return response;
   }
 
-  // getCarById(id: number): Observable<Car> {
-  //   return this.httpClient.get<Car>(this.url + '/' + id)
-  //     .pipe(
-  //       retry(2),
-  //       catchError(this.handleError)
-  //     )
-  // }
+  consultAccountByUser(cpf: string): Observable <User> {
+    let params = new HttpParams();
+    params = params.append('cpf', cpf);
 
-  errorHandler(error: HttpErrorResponse) {
-    return error.message;
+    let response = this.http.get<User>(`${environment.baseURL}/accounts`, { params })
+      .pipe(
+        catchError((error: HttpErrorResponse) => {
+          return throwError(() => error);
+        })
+      );
+    return response;
   }
 }
