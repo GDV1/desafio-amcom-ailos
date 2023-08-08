@@ -22,5 +22,5 @@ Segue abaixo uma lista com os pontos que foram implementados no projeto e os pon
 | Layout (próximo do que foi solicitado) | Testes unitários  |
 | Formulário de consulta usando Reactive Forms  | Validações para CPF |
 | Requisições HTTP simples (sem muitas tratativas de segurança/erros) | Pipe/Máscara para CPF |
-| Componentes customizados | |
-| Estruturação do projeto em módulos | -- |
+| Componentes customizados | - |
+| Estruturação do projeto em módulos | - |
